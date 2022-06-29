@@ -1,0 +1,34 @@
+
+
+1. copy paste dagger app.gradle file
+
+ - dagger
+ - dagger-compiler
+
+2. First we create RetrofitModule class
+
+   - @Module annotation on class top.
+   - then we will create instance of Retrofit with @Singleton @Provider annotations ,
+            so that we dont neeed to instantiate or call retrofit code again and again.
+            It will be done automatically where we inject it
+
+3. Create a Retrofit Servcie Interface where we declare all the apis
+
+4. Now create instance of RetroforServiceInterface with @Singelton and @Provider annotations,
+    so that we can inject this function inside our viewmodel
+
+5. Now , we will create Retrofit Component Interface and annotate that with @Singleton and @Component
+       and declare all the modules over interface name
+
+       - then we will create a method and define class name or viewmodel name , where we need to inject the Retrofit Module.
+
+
+6. Create a viewmodel and inject RetroforServiceInterface with @Inject annotation.
+
+7. CReate application class and instatiate RetroFit Component class and then build app, so that DaggerRetrofitComponentclass is created automatically.
+
+8.And then to inject Retrofit Coponent class , call GetRetrofotComponet method from Application class in Viewmodel.
+
+******************************  Run code and get results  ******************//
+
+
